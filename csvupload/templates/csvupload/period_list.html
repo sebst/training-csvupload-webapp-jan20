@@ -1,0 +1,11 @@
+<html>
+<body>
+<h1>{{text}}</h1>
+<ul>
+    {% for period in periods %}
+    <li><a href="period/{{period.id}}">{{ period }}</a></li>
+    {% endfor %}
+</ul>
+
+</body>
+</html>

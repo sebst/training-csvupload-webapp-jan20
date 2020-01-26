@@ -1,0 +1,24 @@
+<html>
+<body>
+<h1>You selected: {{ selected_period.name  }}</h1>
+<ul>
+    {% for upload in all_upload %}
+    <button>{{ upload }}</button>
+    {% endfor %}
+</ul>
+
+<hr>
+
+<form method="POST" enctype="multipart/form-data">
+{% csrf_token %}
+<table>{{form.as_table}}</table>
+<button type="submit">Send file in</button>
+
+</form>
+
+<hr>
+<a href="/concat/{{ selected_period.pk }}"><button>Download consolidated file</button></a>
+
+
+</body>    
+</html>
